@@ -1,5 +1,5 @@
 {
-  "name": "guguji",
+  "name": "memobird-node",
   "version": "1.0.0",
   "description": "post data to your guguji",
   "main": "index.js",
