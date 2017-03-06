@@ -1,7 +1,7 @@
 # memobird-node
  unofficial memobird node sdk
 
-<!-- # [![Build Status](http://img.shields.io/travis/liyaodong/gugu-node.svg)](https://travis-ci.org/liyaodong/gugu-node)  -->
+[![Build Status](http://img.shields.io/travis/jingxinxin/memobird-node.svg)](https://travis-ci.org/jingxinxin/memobird-node)
 
 [![Npm Status](https://img.shields.io/npm/v/memobird-node.svg)](https://www.npmjs.com/package/memobird-node)
 
