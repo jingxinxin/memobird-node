@@ -1,6 +1,6 @@
 {
   "name": "memobird-node",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "unofficial memobird node sdk",
   "main": "index.js",
   "directories": {
