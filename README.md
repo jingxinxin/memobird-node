@@ -1,11 +1,13 @@
 # memobird-node
  unofficial memobird node sdk
 
-# gugu-node [![Build Status](http://img.shields.io/travis/liyaodong/gugu-node.svg)](https://travis-ci.org/liyaodong/gugu-node) [![Npm Status](https://img.shields.io/npm/v/gugu-node.svg)](https://www.npmjs.com/package/gugu-node)
+<!-- # [![Build Status](http://img.shields.io/travis/liyaodong/gugu-node.svg)](https://travis-ci.org/liyaodong/gugu-node)  -->
+
+[![Npm Status](https://img.shields.io/npm/v/gugu-node.svg)](https://www.npmjs.com/package/memobird-node)
 
 
 ## Install
-`$ npm i gugu-node`
+`$ npm i memobird-node`  or `$ yarn add memobird-node`
 
 > If you need print picture, you should install [GraphicsMagick](http://www.graphicsmagick.org/)
 >
@@ -15,26 +17,25 @@
 
 ### Tiny Example
 ```javascript
-import Gugu from 'gugu-node';
+import Memobirdfrom 'memobird-node';
 
-const gu = new Gugu({
-  useridentifying: 'xxxxxx',
+const guguji = new Memobird{
   memobirdID: 'xxxxxxxxxxxx',
   ak: 'xxxxxxxxxxxxxxxxxxxxxxxxxx',
 });
 
-gu.setup()
-  .then(gu => gu.print('hello, world!'))
-  .catch(gu.catchErr);
+guguji.setup()
+  .then(guguji => guguji.print('hello, world!'))
+  .catch(guguji.catchErr);
 ```
 
 ### Print Array && Image
 
 ```javascript
-import Gugu from 'gugu-node';
-import CONFIG from './config';
+import Memobird from 'memobird-node';
+import params from './config';
 
-const gu = new Gugu(CONFIG);
+const gu = new Gugu(params);
 
 const printArr = [
   { type: 'text',  value: 'Hello, Arr' },
@@ -50,13 +51,14 @@ gu.setup()
 ```
 
 ## Example
-`$ npm run example`
+`$ npm run start`
 
 ## Test
 `$ npm run test`
 
 ## TODO
 * CLI version
+* More feature
 
 ## License
 
