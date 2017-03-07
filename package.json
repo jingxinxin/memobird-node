@@ -11,9 +11,9 @@
   "scripts": {
     "test": "eslint lib/index.js && mocha test/lib/index.js --require babel-core/register",
     "start": "babel-node example.js --presets es2015",
-    "build": "babel lib --presets es2015 -o dist/index.js",
+    "build": "babel lib --presets es2015 --out-dir dist",
     "dev": "babel lib --presets es2015 -o --watch dist/index.js",
-    "clean": "rm -rf dist/*.*"
+    "clean": "rm -rf dist"
   },
   "repository": {
     "type": "git",
