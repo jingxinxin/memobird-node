@@ -5,15 +5,15 @@ chai.use(chaiAsPromised);
 
 const assert = chai.assert;
 
-import CONFIG from '../../config';
-import Gugu from '../../lib/index';
+import { param } from '../../example';
+import Memobird from '../../lib/index';
 
-describe('GUGU sdk', () => {
-  const test  = new Gugu();
-  const test1 = new Gugu(CONFIG);
-  const test2 = new Gugu({ x: 1 });
+describe('Memobird sdk', () => {
+  const test  = new Memobird();
+  const test1 = new Memobird(param);
+  const test2 = new Memobird({ x: 1 });
 
-  it('shoudle pass config', () => {
+  it('shoudle pass params', () => {
     assert.ok(typeof test.props === 'undefined');
     assert.ok(typeof test1.props === 'object');
   });
@@ -22,7 +22,7 @@ describe('GUGU sdk', () => {
     assert.ok(Object.keys(test2).length === 0);
   });
 
-  describe('#_flatStrArray', () => {
+  describe('#flatStrArray', () => {
     const printArr = [
       {
         type : 'text',
@@ -30,7 +30,7 @@ describe('GUGU sdk', () => {
       },
       {
         type : 'pic',
-        value: 'test/images/perlin.jpg'
+        value: 'test/images/perlin.jpeg'
       },
       {
         type : 'pic_url',
@@ -43,24 +43,24 @@ describe('GUGU sdk', () => {
     });
   });
 
-  describe('#_encodPic', () => {
+  describe('#encodPic', () => {
     it('should reject none exist image', () => {
-      assert.isRejected(test1._encodePic('xxx'));
+      assert.isRejected(test1.encodePic('xxx'));
     });
   });
 
-  describe('#_checkExist', () => {
+  describe('#checkExist', () => {
     const obj = {
       a: 'x',
       b: 'y'
     };
 
     it('should return true, when all key exist', () => {
-      assert.isTrue(test1._checkExist(obj, [ 'a', 'b' ]));
+      assert.isTrue(test1.checkExist(obj, [ 'a', 'b' ]));
     });
 
     it('should return false, when some key not exist', () => {
-      assert.isFalse(test1._checkExist(obj, [ 'x' ]));
+      assert.isFalse(test1.checkExist(obj, [ 'x' ]));
     });
   });
 

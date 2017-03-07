@@ -2,8 +2,8 @@ import Memobird from './lib/index';
 import { object } from './config';
 
 export const param = {
-  [object.memobirdID]: 'xxxx',
-  [object.ak]        : 'xxxx'
+  [object.memobirdID]: 'xxxxxxx',
+  [object.ak]        : 'xxxxxxxxxxxxxxxxxxx'
 };
 
 const inst = new Memobird(param);

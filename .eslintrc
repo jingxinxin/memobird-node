@@ -1,10 +1,11 @@
 {
+  "parser": "babel-eslint",
   "env": {
     "node": true,
     "mocha": true,
     "es6": true
   },
-  "extends": "airbnb",
+//  "extends": "airbnb",
   "rules": {
     "func-names": 0,
     "no-new": 0,
@@ -23,8 +24,8 @@
     "no-unused-vars": 0,
     "no-trailing-spaces": [1, { "skipBlankLines": true }],
     "no-unreachable": 1,
-    "react/jsx-uses-react": 1,
-    "react/jsx-uses-vars": 1,
+//    "react/jsx-uses-react": 1,
+//    "react/jsx-uses-vars": 1,
     "no-var": 1
   },
   "globals": {

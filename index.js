@@ -147,7 +147,6 @@ var Memobird = function () {
       var _this3 = this;
 
       return this._request(_config.object.connect).then(function (res) {
-        console.log(res);
         switch (res.showapi_res_code) {
           case 1:
             console.log('userId got success');
@@ -217,15 +216,15 @@ var Memobird = function () {
           _deal;
 
       var deal = (_deal = {}, _defineProperty(_deal, _config.object.text, function (s) {
-        return _this4._encode(s);
+        return _this4.encode(s);
       }), _defineProperty(_deal, _config.object.pic, function (p) {
-        return _this4._encodePic(p);
+        return _this4.encodePic(p);
       }), _defineProperty(_deal, _config.object.pic_url, function (url) {
         return (0, _requestPromise2.default)({
           url: url,
           encoding: null
         }).then(function (res) {
-          return _this4._encodePic(res);
+          return _this4.encodePic(res);
         });
       }), _deal);
 
@@ -251,8 +250,8 @@ var Memobird = function () {
      */
 
   }, {
-    key: '_encode',
-    value: function _encode(str) {
+    key: 'encode',
+    value: function encode(str) {
       return 'T:' + _iconvLite2.default.encode(str + '\n', 'gbk').toString('base64');
     }
 
@@ -263,8 +262,8 @@ var Memobird = function () {
      */
 
   }, {
-    key: '_encodePic',
-    value: function _encodePic(image) {
+    key: 'encodePic',
+    value: function encodePic(image) {
       return new _bluebird2.default(function (res, rej) {
         if (typeof image === 'string') {
           try {
