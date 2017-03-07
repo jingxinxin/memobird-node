@@ -1,11 +1,12 @@
 {
   "name": "memobird-node",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "unofficial memobird node sdk",
   "main": "index.js",
   "directories": {
     "test": "test",
-    "lib": "lib"
+    "lib": "lib",
+    "dist": "dist"
   },
   "scripts": {
     "test": "eslint lib/index.js && mocha test/lib/index.js --require babel-core/register",
