@@ -33,19 +33,19 @@ guguji.setup()
 
 ```javascript
 import Memobird from 'memobird-node';
-import params from './config';
+import {param} from './example';// you must set the params first
 
-const gu = new Gugu(params);
+const guguji = new Memobird(param);
 
 const printArr = [
-  { type: 'text',  value: 'Hello, Arr' },
+  { type: 'text',  value: 'Hello, Jack' },
   { type: 'pic',   value: 'images/test.png' },
   { type: 'pic_url', value: 'http://abc.xyz/images/xxx.png' },
 ];
 
-gu.setup()
-  .then(() => gu.print('Hello, World!'))
-  .then(() => gu.print(printArr))
+guguji.setup()
+  .then(() => guguji.print('Hello, World!'))
+  .then(() => guguji.print(printArr))
   .then(() => console.log('all print task have done!'))
   .catch(gu.catchErr);
 ```
