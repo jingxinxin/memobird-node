@@ -1,5 +1,5 @@
 import Memobird from './lib/index';
-import { object } from './config';
+import { object } from './lib/config';
 
 export const param = {
   [object.memobirdID]: 'xxxxxxx',
