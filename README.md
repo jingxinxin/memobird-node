@@ -17,7 +17,7 @@
 
 ### Tiny Example
 ```javascript
-import Memobirdfrom 'memobird-node';
+import Memobird from 'memobird-node';
 
 const guguji = new Memobird{
   memobirdID: 'xxxxxxxxxxxx',
@@ -51,10 +51,10 @@ guguji.setup()
 ```
 
 ## Example
-`$ npm run start`
+`$ npm run start` or `babel-node example.js --presets es2015`
 
 ## Test
-`$ npm run test`
+`$ npm run test`  or `eslint lib/index.js && mocha test/lib/index.js --require babel-core/register`
 
 ## TODO
 * CLI version
