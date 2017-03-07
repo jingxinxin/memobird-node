@@ -19,7 +19,7 @@
 ```javascript
 import Memobird from 'memobird-node';
 
-const guguji = new Memobird{
+const guguji = new Memobird({
   memobirdID: 'xxxxxxxxxxxx',
   ak: 'xxxxxxxxxxxxxxxxxxxxxxxxxx',
 });
