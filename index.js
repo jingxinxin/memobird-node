@@ -6,9 +6,12 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); //GraphicsMagick for node
-//Bluebird is a full featured promise library with unmatched performance.
-//Convert character encodings in pure javascript.
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+// GraphicsMagick for node
+
+// Bluebird is a full featured promise library with unmatched performance.
+
+// Convert character encodings in pure javascript.
 
 
 var _fs = require('fs');
@@ -51,7 +54,7 @@ var Memobird = function () {
     _classCallCheck(this, Memobird);
 
     if (props === undefined) {
-      console.error('ERR: undefined CONFIG');
+      console.error('ERR: undefined params');
       return;
     }
 
@@ -60,7 +63,7 @@ var Memobird = function () {
      * @type {[*]}
      */
     var keys = [_config.object.memobirdID, _config.object.ak];
-    if (!this._checkExist(props, keys)) return;
+    if (!this.checkExist(props, keys)) return;
 
     this.props = props;
     this.userId = 0;
@@ -104,11 +107,10 @@ var Memobird = function () {
       if (this.userId === 0) return _bluebird2.default.reject('print fail, setup fail,can not get your showapi_userid');
 
       return _bluebird2.default.resolve().then(function () {
-        return _lodash2.default.isArray(str) ? _this2.flatStrArray(str) : _this2._encode(str);
+        return _lodash2.default.isArray(str) ? _this2.flatStrArray(str) : _this2.encode(str);
       }).then(function (printcontent) {
         return _this2._request(_config.object.print, { printcontent: printcontent });
       }).then(function (res) {
-
         if (res.showapi_res_code === 1) {
           console.log('printcontentid: ' + res.printcontentid);
           return _bluebird2.default.resolve(res);
@@ -127,8 +129,8 @@ var Memobird = function () {
     // private
 
   }, {
-    key: '_checkExist',
-    value: function _checkExist(obj, keys) {
+    key: 'checkExist',
+    value: function checkExist(obj, keys) {
       return keys.every(function (v) {
         var isExist = obj.hasOwnProperty(v);
         if (!isExist) console.error('ERR: ' + v + ' is undefined, please check');
